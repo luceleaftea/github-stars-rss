@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Generates an RSS feed of releases from a given user's starred repos",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/luceleaftea/github-stars-rss/issues"
   },
-  "homepage": "https://github.com/luceleaftea/github-stars-rss#readme"
+  "homepage": "https://github.com/luceleaftea/github-stars-rss#readme",
+  "dependencies": {
+    "axios": "^1.7.2"
+  }
 }
