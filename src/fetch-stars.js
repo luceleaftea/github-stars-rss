@@ -9,7 +9,7 @@ export const fetchAllStarredRepositoriesReleaseUrls = async (githubUsername) => 
 
     while (!lastPage) {
         let responseData = await getStarredRepositories(githubUsername, page, limit)
-        starredRepositories = starredRepositories.concat(responseData.map(extractReleasesUrlFromRepository))
+        starredRepositories = starredRepositories.concat(responseData.map(extractDataFromRepository))
 
         page += 1
 
@@ -27,6 +27,11 @@ const getStarredRepositories = async (githubUsername, page, limit) => {
     return (await axios.get(url, {})).data
 }
 
-const extractReleasesUrlFromRepository = (repository) => {
-    return repository.html_url + '/releases.atom'
+const extractDataFromRepository = (repository) => {
+    return {
+        name: repository.name,
+        description: repository.description,
+        htmlUrl: repository.html_url,
+        xmlUrl: repository.html_url + '/releases.atom'
+    }
 }

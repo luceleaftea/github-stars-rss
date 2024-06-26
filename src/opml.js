@@ -1,6 +1,6 @@
 import xmlbuilder from "xmlbuilder";
 
-export const createOpmlFile = (releaseURLs) => {
+export const createOpmlFile = (releaseDatas) => {
     // Create XML document
     let root = xmlbuilder
         .create('opml')
@@ -13,13 +13,13 @@ export const createOpmlFile = (releaseURLs) => {
     head.ele('ownerEmail', 'tjluce@mac.com') // TODO: Move to variable
 
     let body = root.ele('body')
-    releaseURLs.forEach(releaseUrl => {
+    releaseDatas.forEach(data => {
         let outline = body.ele('outline')
-        outline.att('text', 'Test Name') // TODO: Pull from object
-        outline.att('description', 'Test Description') // TODO: Pull from object
-        outline.att('htmlUrl', 'http://google.com') // TODO: Pull from object
+        outline.att('text', data.name)
+        outline.att('description', data.description)
+        outline.att('htmlUrl', data.htmlUrl)
         outline.att('type', 'rss')
-        outline.att('xmlUrl', releaseUrl)
+        outline.att('xmlUrl', data.xmlUrl)
     });
 
     var xmlString = root.end({ pretty: true});
