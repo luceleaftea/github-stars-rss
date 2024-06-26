@@ -28,5 +28,5 @@ const getStarredRepositories = async (githubUsername, page, limit) => {
 }
 
 const extractReleasesUrlFromRepository = (repository) => {
-    return repository.releases_url
+    return repository.html_url + '/releases.atom'
 }

@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/luceleaftea/github-stars-rss#readme",
   "dependencies": {
-    "axios": "^1.7.2"
+    "axios": "^1.7.2",
+    "xmlbuilder": "^15.1.1"
   }
 }
