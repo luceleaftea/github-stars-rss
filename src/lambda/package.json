@@ -1,7 +1,7 @@
 {
-  "name": "github-stars-rss",
+  "name": "github-stars-rss-lambda",
   "version": "1.0.0",
-  "description": "Generates an RSS feed of releases from a given user's starred repos",
+  "main": "lambda.js",
   "type": "module",
   "repository": {
     "type": "git",
@@ -12,5 +12,9 @@
   "bugs": {
     "url": "https://github.com/luceleaftea/github-stars-rss/issues"
   },
-  "homepage": "https://github.com/luceleaftea/github-stars-rss#readme"
+  "homepage": "https://github.com/luceleaftea/github-stars-rss#readme",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "xmlbuilder": "^15.1.1"
+  }
 }
