@@ -1,7 +1,7 @@
 {
   "name": "github-stars-rss-lambda",
   "version": "1.0.0",
-  "main": "lambda.mjs",
+  "main": "lambda.js",
   "type": "module",
   "repository": {
     "type": "git",
