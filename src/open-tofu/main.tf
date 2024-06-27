@@ -36,7 +36,7 @@ data "archive_file" "lambda" {
     output_path = "lambda_function_payload.zip"
 }
 
-resource "aws_lambda_function" "test_lambda" {
+resource "aws_lambda_function" "opml_lambda" {
     # If the file is not in the current working directory you will need to include a
     # path.module in the filename.
     filename      = "lambda_function_payload.zip"
@@ -53,4 +53,9 @@ resource "aws_lambda_function" "test_lambda" {
             foo = "bar"
         }
     }
+}
+
+resource "aws_lambda_function_url" "opml_lambda_function_url" {
+    function_name      = aws_lambda_function.opml_lambda.function_name
+    authorization_type = "NONE"
 }

@@ -1,3 +1,3 @@
-export const handler = async (event, context) => {
+exports.handler = async (event, context) => {
     return "Hello World"
 };
