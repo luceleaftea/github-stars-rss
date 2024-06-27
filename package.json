@@ -1,0 +1,16 @@
+{
+  "name": "github-stars-rss",
+  "version": "1.0.0",
+  "description": "Generates an RSS feed of releases from a given user's starred repos",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luceleaftea/github-stars-rss.git"
+  },
+  "author": "luceleaftea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luceleaftea/github-stars-rss/issues"
+  },
+  "homepage": "https://github.com/luceleaftea/github-stars-rss#readme"
+}

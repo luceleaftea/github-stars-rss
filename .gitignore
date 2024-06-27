@@ -1,0 +1,7 @@
+node_modules/
+
+## Open Tofu
+.terraform
+*.tfstate*
+lambda_function_payload.zip
+*.tfvars
