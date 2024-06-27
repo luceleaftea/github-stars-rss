@@ -1,7 +1,25 @@
 #### Variables
 
 variable "region" {
+    type = string
     default = "us-east-1"
+}
+
+variable "github_username" {
+    type = string
+}
+
+variable "opml_title" {
+    type = string
+    default = "github-stars.opml"
+}
+
+variable "opml_owner_name" {
+    type = string
+}
+
+variable "opml_owner_email" {
+    type = string
 }
 
 #### Provider
@@ -50,7 +68,10 @@ resource "aws_lambda_function" "opml_lambda" {
 
     environment {
         variables = {
-            foo = "bar"
+            github_username = var.github_username,
+            opml_title = var.opml_title,
+            opml_owner_name = var.opml_owner_name,
+            opml_owner_email = var.opml_owner_email
         }
     }
 }

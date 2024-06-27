@@ -2,7 +2,7 @@ import axios from 'axios'
 import xmlbuilder from "xmlbuilder";
 
 export async function handler(event, context) {
-    const starredRepositoriesReleaseURLs = await fetchAllStarredRepositoriesReleaseUrls('luceleaftea')
+    const starredRepositoriesReleaseURLs = await fetchAllStarredRepositoriesReleaseUrls(process.env.github_username)
     const opmlFile = createOpmlFile(starredRepositoriesReleaseURLs)
 
     return opmlFile
@@ -51,10 +51,10 @@ const createOpmlFile = (releaseDatas) => {
         .att('version', '2.0')
 
     let head = root.ele('head')
-    head.ele('title', 'github-stars.opml') // TODO: Move to variable
+    head.ele('title', process.env.opml_title)
     head.ele('dateModified', new Date().toUTCString())
-    head.ele('ownerName', 'Tyler Luce') // TODO: Move to variable
-    head.ele('ownerEmail', 'tjluce@mac.com') // TODO: Move to variable
+    head.ele('ownerName', process.env.opml_owner_name)
+    head.ele('ownerEmail', process.env.opml_owner_email)
 
     let body = root.ele('body')
     releaseDatas.forEach(data => {
