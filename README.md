@@ -20,6 +20,8 @@ Generates an RSS feed of releases from a given user's starred repos
 
 ### Installation
 
+<!-- TODO: Update for non-Linux -->
+
 - Install OpenTofu with `brew install opentofu`
 - Initialize OpenTOfu with `tofu init` in the `src/open-tofu` folder
 - Install the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
