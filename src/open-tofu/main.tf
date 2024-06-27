@@ -32,7 +32,7 @@ resource "aws_iam_role" "iam_for_lambda" {
 
 data "archive_file" "lambda" {
     type        = "zip"
-    source_file = "index.js"
+    source_dir = "../lambda"
     output_path = "lambda_function_payload.zip"
 }
 
@@ -42,7 +42,7 @@ resource "aws_lambda_function" "opml_lambda" {
     filename      = "lambda_function_payload.zip"
     function_name = "generate_opml_file"
     role          = aws_iam_role.iam_for_lambda.arn
-    handler       = "index.handler"
+    handler       = "lambda.handler"
 
     source_code_hash = data.archive_file.lambda.output_base64sha256
 

@@ -1,0 +1,20 @@
+{
+  "name": "github-stars-rss-lambda",
+  "version": "1.0.0",
+  "main": "lambda.mjs",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luceleaftea/github-stars-rss.git"
+  },
+  "author": "luceleaftea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luceleaftea/github-stars-rss/issues"
+  },
+  "homepage": "https://github.com/luceleaftea/github-stars-rss#readme",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "xmlbuilder": "^15.1.1"
+  }
+}
